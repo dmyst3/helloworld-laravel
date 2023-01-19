@@ -1,0 +1,31 @@
+name: Composer Action
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Setup PHP
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y php-cli
+        php -v
+
+    - name: Install Composer
+      run: |
+        php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+        php composer-setup.php
+        php -r "unlink('composer-setup.php');"
+        mv composer.phar /usr/local/bin/composer
+
+    - name: Run Composer
+      run: |
+        composer install --no-dev
