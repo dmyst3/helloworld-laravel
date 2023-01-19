@@ -16,7 +16,7 @@ jobs:
     - name: Setup PHP
       run: |
         sudo apt-get update
-        sudo apt-get install -y php-cli
+        sudo apt-get install -y php7.1
         php -v
 
     - name: Install Composer
