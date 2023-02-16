@@ -50,12 +50,7 @@ jobs:
           echo "Installing Composer 2.5.4"
           curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
         fi
-        
-    - name: Install Laravel v10.0.0
-      run: |
-        composer create-project --prefer-dist laravel/laravel:v10.0.0 laravel
 
     - name: Run composer
       run: |
-        cd laravel
         composer install
