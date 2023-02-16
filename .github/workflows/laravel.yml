@@ -72,7 +72,7 @@ jobs:
     steps:
     
     - name: Publish Git tag
-      run: echo hello
+      uses: actions/create-release@v1
     
     - name: Publish build to artifactory
       run: echo hello
