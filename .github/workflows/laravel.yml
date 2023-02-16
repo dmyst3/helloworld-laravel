@@ -48,13 +48,34 @@ jobs:
         else
           echo "Composer 2.5.4 is not installed"
           echo "Installing Composer 2.5.4"
-          #curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-          sudo apt install composer -y
+          curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
         fi
 
     - name: Run composer
       run: |
         composer install
         
+    - name: List Dir
+      run: ls -la
+
+
+  Unit-Test:
+    needs: PHP-Composer
+    runs-on: ubuntu-latest
+    steps:
     - name: Run PHP Unit Test
       run: vendor/bin/phpunit
+
+  Publish-Package:
+    needs: PHP-Composer
+    runs-on: ubuntu-latest
+    steps:
+    
+    - name: Publish Git tag
+      run: ech hello
+    
+    - name: Publish build to artifactory
+      run: ech hello
+
+    - name: Publish metadata to CMDB,Plutora and Digital.ai deploy
+      run: ech hello
