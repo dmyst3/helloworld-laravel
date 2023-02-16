@@ -27,4 +27,6 @@ jobs:
     
     - name: check composer version
       run: composer -v
-
+      
+    - name: execute php composer
+      run: composer install
