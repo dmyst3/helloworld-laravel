@@ -48,7 +48,8 @@ jobs:
         else
           echo "Composer 2.5.4 is not installed"
           echo "Installing Composer 2.5.4"
-          curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+          #curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+          sudo apt install composer -y
         fi
 
     - name: Run composer
