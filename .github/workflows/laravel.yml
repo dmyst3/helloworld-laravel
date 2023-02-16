@@ -54,3 +54,10 @@ jobs:
     - name: Run composer
       run: |
         composer install
+
+        
+  Unit-Test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Run PHP Unit Test
+      run: ./vendor/bin/phpunit
