@@ -10,8 +10,18 @@ jobs:
   PHP-Composer:
 
     runs-on: ubuntu-latest
+    
+
 
     steps:
+    
+    - name: Install PHP and Composer
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y php-cli php-zip unzip
+        curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+    
+    
     - name: Install Dependencies
       run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
 
