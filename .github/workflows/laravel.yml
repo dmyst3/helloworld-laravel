@@ -21,7 +21,7 @@ on:
 
 jobs:
   PHP-Composer:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     
     steps:
 
@@ -56,16 +56,5 @@ jobs:
       run: |
         composer install
         
-    - name: List Dir
-      run: ls -la
-
-
-  Unit-Test:
-    needs: PHP-Composer
-    runs-on: self-hosted
-    steps:
-    - name: List Dir
-      run: ls -la
-      
     - name: Run PHP Unit Test
       run: vendor/bin/phpunit
