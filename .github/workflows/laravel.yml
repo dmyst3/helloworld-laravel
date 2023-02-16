@@ -64,4 +64,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Run PHP Unit Test
-      run: ./vendor/bin/phpunit
+      run: vendor/bin/phpunit
