@@ -54,6 +54,9 @@ jobs:
     - name: Run composer
       run: |
         composer install
+        
+    - name: List Dir
+      run: ls -la
 
 
   Unit-Test:
