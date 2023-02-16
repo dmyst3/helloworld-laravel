@@ -55,8 +55,9 @@ jobs:
       run: |
         composer install
 
-        
+
   Unit-Test:
+    needs: PHP-Composer
     runs-on: ubuntu-latest
     steps:
     - name: Run PHP Unit Test
