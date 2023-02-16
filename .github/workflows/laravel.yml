@@ -72,10 +72,10 @@ jobs:
     steps:
     
     - name: Publish Git tag
-      run: ech hello
+      run: echo hello
     
     - name: Publish build to artifactory
-      run: ech hello
+      run: echo hello
 
     - name: Publish metadata to CMDB,Plutora and Digital.ai deploy
-      run: ech hello
+      run: echo hello
