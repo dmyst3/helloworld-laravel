@@ -28,5 +28,8 @@ jobs:
     - name: check composer version
       run: composer -v
       
+    - name: list files
+      run: ls -la
+      
     - name: execute php composer
       run: composer install
