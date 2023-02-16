@@ -63,5 +63,8 @@ jobs:
     needs: PHP-Composer
     runs-on: ubuntu-latest
     steps:
+    - name: List Dir
+      run: ls -la
+      
     - name: Run PHP Unit Test
       run: vendor/bin/phpunit
